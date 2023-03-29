@@ -11,9 +11,7 @@ pool:
 
 steps:
 - task: betterscanscan@0 
-- task: DownloadBuildArtifacts@1
+- task: DownloadPipelineArtifact@2
   inputs:
     buildType: 'current'
-    downloadType: 'single'
-    artifactName: 'CodeAnalysisLogs'
-    downloadPath: '$(System.ArtifactsDirectory)'
+    targetPath: '$(Pipeline.Workspace)'

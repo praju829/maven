@@ -10,4 +10,10 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: betterscanscan@0
+- task: betterscanscan@0 
+- task: DownloadBuildArtifacts@1
+  inputs:
+    buildType: 'current'
+    downloadType: 'single'
+    artifactName: 'CodeAnalysisLogs'
+    downloadPath: '$(System.ArtifactsDirectory)'

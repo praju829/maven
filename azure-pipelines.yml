@@ -11,7 +11,8 @@ pool:
 
 steps:
 - task: betterscanscan@0 
-- task: DownloadPipelineArtifact@2
+- task: PublishBuildArtifacts@1
   inputs:
-    buildType: 'current'
-    targetPath: '$(Pipeline.Workspace)'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'CodeAnalysisLogs'
+    publishLocation: 'Container'

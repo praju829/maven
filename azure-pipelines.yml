@@ -11,8 +11,3 @@ pool:
 
 steps:
 - task: betterscanscan@0 
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'CodeAnalysisLogs'
-    publishLocation: 'Container'

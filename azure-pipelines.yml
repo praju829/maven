@@ -11,3 +11,10 @@ pool:
 
 steps:
 - task: betterscanscan@0 
+
+- task: SnykSecurityScan@1
+  inputs:
+    serviceConnectionEndpoint: 'snyk'
+    testType: 'app'
+    monitorWhen: 'always'
+    failOnIssues: false
